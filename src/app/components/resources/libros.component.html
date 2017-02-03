@@ -1,0 +1,23 @@
+<div class="container-fluid full-page">
+        <div class="row">
+                <div class="form-horizontal col-xs-6 col-xs-offset-3">
+                        <div class="libros-container m30">
+                                <md-list dense *ngFor="let libro of libros">
+                                        <md-list-item> {{ libro.Nombre }}  <span (click)="delete(libro)" >X</span></md-list-item>
+                                </md-list>
+                        </div>
+                </div>
+        </div>
+
+        <div class="row">
+                <form (ngSubmit)="onSubmit($event)"  class="form-horizontal col-xs-6 col-xs-offset-3">
+                        <md-input-container class="full-width m30">
+                                <input md-input  name="Nombre" placeholder="Nombre" [(ngModel)]="libroForm.Nombre">
+                        </md-input-container>
+                        <md-input-container class="full-width m30">
+                                <input md-input name="Fecha" placeholder="Fecha" [(ngModel)]="libroForm.Fecha" >
+                        </md-input-container>
+                        <button type="submit" md-raised-button color="primary" class="pull-right">Guardar</button>
+                </form>
+        </div>
+</div>

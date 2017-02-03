@@ -1,0 +1,10 @@
+<ul class="nav">
+        <li *ngFor="let item of navegacion" >
+                <a
+                        [routerLink] = item.link
+                        [class.active]="selected === item.nombre"
+                        (click) ="select(item.nombre)">
+                                {{item.nombre}}
+                </a>
+        </li>
+</ul>
